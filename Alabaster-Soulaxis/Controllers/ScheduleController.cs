@@ -11,9 +11,15 @@ namespace Alabaster_Soulaxis.Controllers {
     public class ScheduleController : ApiController {
         public IEnumerable<string> GetSchedules() {
             return new List<string> {
-               new DateTime(2016, 12, 13).ToLongDateString(),
-               new DateTime(2016, 12, 20).ToLongDateString(),
-               new DateTime(2016, 12, 27).ToLongDateString(),
+               new DateTime(2016, 01, 03).ToLongDateString(),
+               new DateTime(2016, 01, 10).ToLongDateString(),
+               new DateTime(2016, 01, 17).ToLongDateString(),
+               new DateTime(2016, 01, 24).ToLongDateString(),
+               new DateTime(2016, 01, 31).ToLongDateString(),
+               new DateTime(2016, 02, 07).ToLongDateString(),
+               new DateTime(2016, 02, 14).ToLongDateString(),
+               new DateTime(2016, 02, 21).ToLongDateString(),
+               new DateTime(2016, 02, 28).ToLongDateString(),
            };
         }
 

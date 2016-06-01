@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: rgba(241, 241, 241, 0.56);
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -32,7 +33,19 @@
     border: none;
 }
 
-.list-group-item.button {
+a.list-group-item:hover {
+    background-color: #F1F0EF;
+}
+
+.list-group-item.button, .list-group-item.button:hover {
     background-color: #f47c3c;
     color: #fff;
+}
+
+.panel-default {
+    background-color: #FBFBFB;
+}
+
+.panel-default > .panel-heading {
+    background-color: #F1F0EF;
 }

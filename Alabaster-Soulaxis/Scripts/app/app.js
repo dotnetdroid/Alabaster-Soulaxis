@@ -23,7 +23,7 @@
             $("#page_songs").fadeIn();
         });
 
-        this.get(/#.*/, function () {
+        this.get(/.*/, function () {
             location.hash = "#/schedule";
         });
 
