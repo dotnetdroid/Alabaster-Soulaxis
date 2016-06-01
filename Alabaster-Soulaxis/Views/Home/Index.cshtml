@@ -1,6 +1,22 @@
-﻿@section SPAViews {
-    @Html.Partial("_Home")
-}
-@section Scripts{
-    @Scripts.Render("~/bundles/knockout")
+﻿<div class="row" style="margin-top: 50px">
+    <section class="main">
+        <div id="page_schedule" class="page">
+            @Html.Partial("~/Views/Shared/Templates/Schedule.cshtml")
+        </div>
+        <div id="page_songs" class="page">
+           @Html.Partial("~/Views/Shared/Templates/Songs.cshtml")
+        </div>
+    </section>
+</div>
+@section scripts {
+    <script src="~/Scripts/sammy-0.7.4.min.js"></script>
+    <script src="~/Scripts/knockout-2.3.0.js"></script>
+    <script src="~/Scripts/knockout.mapping-latest.js"></script>
+    <script src="~/Scripts/app/ViewModel/ScheduleViewModel.js"></script>
+    <script src="~/Scripts/app/ViewModel/SongsViewModel.js"></script>
+    <script src="~/Scripts/app/app.js"></script>
+    <script>
+        app = new App();
+        app.init();
+    </script>
 }

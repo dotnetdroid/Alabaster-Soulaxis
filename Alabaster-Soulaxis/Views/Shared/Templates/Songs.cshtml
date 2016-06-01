@@ -1,0 +1,72 @@
+﻿<div class="col-md-4">
+    <div class="bs-component">
+        <div class="list-group">
+            <a href="#" class="list-group-item button">
+                ADD SONG <span class="glyphicon glyphicon-plus pull-right"></span>
+            </a>
+        </div>
+        <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">This week's lineup</div>
+        <div class="panel-body">
+            <div class="bs-component">
+                <ul class="list-group" data-bind="foreach: CurrentLineup">
+                    <li class="list-group-item">
+                        <strong data-bind="text: title"></strong>
+                        <br />
+                        <span data-bind="text: singer "></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Favorites</div>
+        <div class="panel-body">
+            <div class="bs-component">
+                <ul class="list-group" data-bind="foreach: Favorites">
+                    <li class="list-group-item">
+                        <strong data-bind="text: title"></strong>
+                        <br />
+                        <span data-bind="text: singer "></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-8">
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="form-group">
+            <div class="col-xs-12">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                    <input type="text" class="form-control" placeholder="Search song...">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bs-component">
+        <ul class="list-group" data-bind="foreach: SongList">
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-xs-1">
+                        <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-play-circle" style="font-size: 2em;"></span></button>
+                    </div>
+                    <div class="col-xs-8">
+                        <strong data-bind="text: title"></strong>
+                        <br />
+                        <span data-bind="text: singer "></span>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="bs-component" style="margin-bottom: 15px;">
+                            <button type="button" class="btn btn-default btn-sm pull-right" style="padding-left: 5px;">Download <span class="glyphicon glyphicon-download"></span></button>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,127 @@
+﻿<div class="col-md-3">
+    <div class="input-group" style="margin-bottom: 10px;">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+        <input type="text" class="form-control" placeholder="Search by date...">
+    </div>
+    <div class="bs-component">
+        <!-- ko if: Schedules() -->
+        <div class="list-group" data-bind="foreach: Schedules">
+            <a href="#" class="list-group-item" data-bind="text: $data">
+            </a>
+        </div>
+        <!-- /ko -->
+        <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+    </div>
+</div>
+
+<div class="col-md-9">
+    <!-- ko if: Schedule() -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <!-- ko with: Schedule -->
+                <div class="panel-body">
+                    <table class="table table-hover table-borderless">
+                        <tr>
+                            <td class="col-xs-2">
+                                <strong>Theme</strong>
+                            </td>
+                            <td>
+                                <span data-bind="text: $parent.Lineup().theme"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Worship Leader</strong>
+                            </td>
+                            <td>
+                                <span data-bind="text: worshipLeader.firstName + ' ' + worshipLeader.lastName"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Band OIC</strong>
+                            </td>
+                            <td>
+                                <span data-bind="text: bandLeader.firstName + ' ' + bandLeader.lastName"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Sound Technician</strong>
+                            </td>
+                            <td>
+                                <span data-bind="text: soundTechnician.firstName + ' ' + soundTechnician.lastName"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Multimedia</strong>
+                            </td>
+                            <td>
+                                <span data-bind="text: multimedia.firstName + ' ' + multimedia.lastName"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- /ko -->
+            </div>
+
+        </div>
+    </div>
+    <!-- /ko -->
+    <!-- ko if: Band() && Singers() -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Singers</div>
+                <div class="panel-body">
+                    <div class="bs-component">
+                        <ul class="list-group" data-bind="foreach: Singers">
+                            <li class="list-group-item">
+                                <strong data-bind="text: person.firstName"></strong>
+                                <span data-bind="text: '  ' + role "></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Band</div>
+                <div class="panel-body">
+                    <div class="bs-component">
+                        <ul class="list-group" data-bind="foreach: Band">
+                            <li class="list-group-item">
+                                <strong data-bind="text: person.firstName"></strong>
+                                <span data-bind="text: '  ' + role "></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Lineup</div>
+                <div class="panel-body">
+                    <div class="bs-component">
+                        <!-- ko if: Lineup() -->
+                        <ul class="list-group" data-bind="foreach: Lineup().songs">
+                            <li class="list-group-item">
+                                <strong data-bind="text: title"></strong>
+                                <br />
+                                <span data-bind="text: singer "></span>
+                            </li>
+                        </ul>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
